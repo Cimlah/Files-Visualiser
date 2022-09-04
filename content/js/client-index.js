@@ -1,4 +1,4 @@
-const testButton = document.querySelector('.test-button')
+const sendGetRequestButton = document.querySelector('.send-get-request')
 const fileList = document.querySelector('.file-list')
 
 const host = 'localhost:3000'
@@ -36,4 +36,4 @@ async function sendGet() {
     }
 }
 
-testButton.addEventListener("click", sendGet)
+sendGetRequestButton.addEventListener("click", sendGet)
