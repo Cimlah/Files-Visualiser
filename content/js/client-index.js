@@ -11,13 +11,25 @@ async function sendGet() {
         files = response.data
 
         function displayFileList() {
-            for(let i = 0; i < files.length; i++) {
-                const file = document.createElement('div')
-                file.classList.add('file')
-                const fileName = document.createTextNode(files[i])
-                file.appendChild(fileName)
-                fileList.appendChild(file)
+            let file, fileName = null
+
+            if(fileList.childElementCount <= files.length) {
+                fileList.replaceChildren('')
+
+                for(let i = 0; i < files.length; i++) {
+                    file = document.createElement('div')
+                    file.classList.add('file')
+                    fileName = document.createTextNode(files[i])
+                    file.appendChild(fileName)
+                    fileList.appendChild(file)
+                }
             }
+            else {
+                fileList.replaceChildren('')
+                displayFileList()
+            }
+
+            console.log(fileList.childElementCount)
         } displayFileList()
     } catch (error) {
         console.error(error);
