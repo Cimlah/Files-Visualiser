@@ -1,13 +1,15 @@
 const sendGetRequestButton = document.querySelector('.send-get-request')
 const fileList = document.querySelector('.file-list')
+const sendPostRequestInput = document.querySelector('.current-path')
 
 const host = 'localhost:3000'
-const url = 'http://' + host + '/get-data'
-let files = []
 
 async function sendGet() {
+    const getUrl = 'http://' + host + '/get-data'
+    let files = []
+
     try {
-        const response = await axios.get(url);
+        const response = await axios.get(getUrl);
         files = response.data
 
         function displayFileList() {
@@ -36,4 +38,13 @@ async function sendGet() {
     }
 }
 
+function sendPost() {
+    const postUrl = 'http://' + host + '/send-data'
+
+    axios.post(postUrl, {
+        path: sendPostRequestInput.value
+    })
+}
+
 sendGetRequestButton.addEventListener("click", sendGet)
+sendPostRequestInput.addEventListener("blur", sendPost)

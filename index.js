@@ -5,15 +5,21 @@ const prepareFileList = require('./my_modules/paths')
 const app = express()
 const port = 3000
 const contentRoot = path.join(__dirname, 'content')
+let currentPath
 
 app.use(express.static(contentRoot))
+app.use(express.json())
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(contentRoot, 'html/index.html'))
 })
 
+app.post('/send-data', function(req, res) {
+    currentPath = req.body['path']
+})
+
 app.get('/get-data', function(req, res) {
-    prepareFileList(__dirname)
+    prepareFileList(currentPath)
     res.sendFile(path.join(__dirname, 'paths-data.json'))
 })
 
