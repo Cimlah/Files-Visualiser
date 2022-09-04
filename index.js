@@ -5,7 +5,8 @@ const app = express()
 const port = 3000
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'html/index.html'))
+    const contentRoot = path.join(__dirname, 'content')
+    res.sendFile(path.join(contentRoot, 'html/index.html'))
 })
 
 app.listen(port, (err) => {
