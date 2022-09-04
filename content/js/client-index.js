@@ -2,7 +2,7 @@ const testButton = document.querySelector('.test-button')
 const fileList = document.querySelector('.file-list')
 
 const host = 'localhost:3000'
-const url = 'http://' + host + '/data'
+const url = 'http://' + host + '/get-data'
 let files = []
 
 async function sendGet() {

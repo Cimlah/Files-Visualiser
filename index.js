@@ -12,7 +12,7 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(contentRoot, 'html/index.html'))
 })
 
-app.get('/data', function(req, res) {
+app.get('/get-data', function(req, res) {
     prepareFileList(__dirname)
     res.sendFile(path.join(__dirname, 'paths-data.json'))
 })
