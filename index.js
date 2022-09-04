@@ -3,9 +3,11 @@ const path = require('path')
 
 const app = express()
 const port = 3000
+const contentRoot = path.join(__dirname, 'content')
+
+app.use(express.static(contentRoot))
 
 app.get('/', function(req, res) {
-    const contentRoot = path.join(__dirname, 'content')
     res.sendFile(path.join(contentRoot, 'html/index.html'))
 })
 
