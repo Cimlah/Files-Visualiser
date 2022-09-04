@@ -11,5 +11,8 @@
     "url": "/Users/cimlah/Documents/projekty/git-server.nosync/files-visualiser.git"
   },
   "author": "Michał Stolarczyk",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
 }
