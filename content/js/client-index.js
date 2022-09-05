@@ -38,12 +38,14 @@ async function sendGet() {
     }
 }
 
-function sendPost() {
+async function sendPost() {
     const postUrl = 'http://' + host + '/send-data'
 
     axios.post(postUrl, {
         path: sendPostRequestInput.value
     })
+        .then((response) => {console.log(response)})
+        .catch((error) => {console.log(error)})
 }
 
 sendGetRequestButton.addEventListener("click", sendGet)

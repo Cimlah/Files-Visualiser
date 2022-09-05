@@ -16,10 +16,11 @@ app.get('/', function(req, res) {
 
 app.post('/send-data', function(req, res) {
     currentPath = req.body['path']
+    prepareFileList(currentPath)
+    res.send('Got a POST Request with a path of: ' + currentPath)
 })
 
 app.get('/get-data', function(req, res) {
-    prepareFileList(currentPath)
     res.sendFile(path.join(__dirname, 'paths-data.json'))
 })
 
