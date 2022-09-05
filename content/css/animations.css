@@ -1,0 +1,11 @@
+.hover-animation:hover {
+    box-shadow: 0px 0px 15px 0px rgba(42, 168, 255, 1);
+    animation: hover 0.2s ease-out 0s 1 forwards;
+    border: none;
+}
+
+@keyframes hover {
+    100% {
+        transform: translateY(-4px);
+    }
+}

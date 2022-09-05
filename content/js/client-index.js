@@ -21,6 +21,7 @@ async function sendGet() {
                 for(let i = 0; i < files.length; i++) {
                     file = document.createElement('div')
                     file.classList.add('file')
+                    file.classList.add('hover-animation')
                     fileName = document.createTextNode(files[i])
                     file.appendChild(fileName)
                     fileList.appendChild(file)
